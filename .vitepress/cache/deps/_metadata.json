@@ -1,0 +1,46 @@
+{
+  "hash": "22cc759a",
+  "configHash": "d41e27cb",
+  "lockfileHash": "7fbfbcab",
+  "browserHash": "7bd147ef",
+  "optimized": {
+    "vue": {
+      "src": "../../../node_modules/.pnpm/vue@3.4.27/node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "9c07ba4a",
+      "needsInterop": false
+    },
+    "vitepress > @vue/devtools-api": {
+      "src": "../../../node_modules/.pnpm/@vue+devtools-api@7.2.1_vue@3.4.27/node_modules/@vue/devtools-api/dist/index.js",
+      "file": "vitepress___@vue_devtools-api.js",
+      "fileHash": "b07f6b9c",
+      "needsInterop": false
+    },
+    "vitepress > @vueuse/core": {
+      "src": "../../../node_modules/.pnpm/@vueuse+core@10.10.0_vue@3.4.27/node_modules/@vueuse/core/index.mjs",
+      "file": "vitepress___@vueuse_core.js",
+      "fileHash": "5975f33b",
+      "needsInterop": false
+    },
+    "zijid-ui": {
+      "src": "C:/Users/Administrator/AppData/Roaming/nvm/v22.2.0/node_modules/zijid-ui/package/main.mjs",
+      "file": "zijid-ui.js",
+      "fileHash": "abdf941d",
+      "needsInterop": false
+    },
+    "zijid-ui/dev": {
+      "src": "C:/Users/Administrator/AppData/Roaming/nvm/v22.2.0/node_modules/zijid-ui/index.js",
+      "file": "zijid-ui_dev.js",
+      "fileHash": "85d3b353",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-RV5F5XHA": {
+      "file": "chunk-RV5F5XHA.js"
+    },
+    "chunk-F3FYYIAV": {
+      "file": "chunk-F3FYYIAV.js"
+    }
+  }
+}

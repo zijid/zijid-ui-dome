@@ -10,9 +10,42 @@ const data=[
 		icon:"zj-modular",
 		children:[
 			{
+				title:"安装1",
+				icon:"zj-direction-down",
+				children:[
+			{
+				title:"安装2",
+				icon:"zj-direction-down",
+				children:[
+			{
+				title:"安装3",
+				icon:"zj-direction-down",
+				children:[
+			{
 				title:"安装",
 				icon:"zj-direction-down",
 				children:[
+				],
+				path:"/groups/1",
+				handle:function(title, children,event){
+					location.hash=""
+					location.hash="#install"
+				}
+			},
+				],
+				path:"/groups/1",
+				handle:function(title, children,event){
+					location.hash=""
+					location.hash="#install"
+				}
+			},
+				],
+				path:"/groups/1",
+				handle:function(title, children,event){
+					location.hash=""
+					location.hash="#install"
+				}
+			},
 				],
 				path:"/groups/1",
 				handle:function(title, children,event){
@@ -250,14 +283,14 @@ const position=reactive({
 
 <div class="box">
 	<div class="left">
-			<zi-file-dir :data="data" default-active="按钮" 
+			<zi-dir :data="data" default-active="按钮" 
 				@action="action"
 				action-key="title"
 				:default-openeds="['2-1','按钮']"
 				dirIcon="zj-arrow-down-bold"
 				dirIconOpen="zj-arrow-up-bold"
 				:isZoom="true"
-			></zi-file-dir>
+			></zi-dir>
 	</div>
 	<div class="right">
 		<i id="top"></i>
@@ -280,26 +313,26 @@ app.use(z)` }}
 		<h1 id="dir">目录</h1>
 		<code class="code">
 			
-{{ `<zi-file-dir :data="data" default-active="按钮" 
+{{ `<zi-dir :data="data" default-active="按钮" 
 	@action="action"
 	action-key="title"
 	:default-openeds="['2-1','按钮']"
 	dirIcon="zj-arrow-down-bold"
 	dirIconOpen="zj-arrow-up-bold"
 	:isZoom="true"
-></zi-file-dir>` }}
+></zi-dir>` }}
 
 		</code>
 
 		<div style="height: 300px;">
-			<zi-file-dir :data="data" default-active="按钮" 
+			<zi-dir :data="data" default-active="按钮" 
 			@action="action"
 			action-key="title"
 			:default-openeds="['2-1','按钮']"
 			dirIcon="zj-arrow-down-bold"
 			dirIconOpen="zj-arrow-up-bold"
 			:isZoom="true"
-			></zi-file-dir>
+			></zi-dir>
 		</div>
 		<h1 id="fileDir">文件目录</h1>
 		
@@ -353,7 +386,7 @@ const openDir=(e)=>{
 
 		</code>
 		<div style="height: 100px;">
-			<zi-dir @open="openDir" :data="dirData1"></zi-dir>
+			<zi-file-dir @open="openDir" :data="dirData1"></zi-file-dir>
 		</div>
 		<div class="top" @click="top">
 			<zi-icon name="direction-up" color="#fff"></zi-icon>
