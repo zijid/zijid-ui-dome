@@ -26,6 +26,7 @@ export default defineConfig({
 			{ icon: 'github', link: 'https://github.com/zijid/zijid-ui-dome' }
 		]
 	},
+	outDir: 'docs',
 	vite: {
 		ssr: {
 			noExternal: ['zijid-ui'],  // 不将zijid-ui外部化
