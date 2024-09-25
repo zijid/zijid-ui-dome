@@ -27,6 +27,7 @@ export default defineConfig({
 		]
 	},
 	outDir: 'docs',
+	base:"zijid-ui-dome",
 	vite: {
 		ssr: {
 			noExternal: ['zijid-ui'],  // 不将zijid-ui外部化
