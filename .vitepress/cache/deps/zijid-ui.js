@@ -30,10 +30,9 @@ import {
   withCtx,
   withDirectives
 } from "./chunk-RV5F5XHA.js";
-import "./chunk-F3FYYIAV.js";
 
-// C:/Users/Administrator/AppData/Roaming/nvm/v22.2.0/node_modules/zijid-ui/package/main.mjs
-import "C:/Users/Administrator/AppData/Roaming/nvm/v22.2.0/node_modules/zijid-ui/package/style.css";
+// node_modules/.pnpm/zijid-ui@0.0.8/node_modules/zijid-ui/package/main.mjs
+import "F:/我的git/zijid-ui-demo/node_modules/.pnpm/zijid-ui@0.0.8/node_modules/zijid-ui/package/style.css";
 var d3 = Object.defineProperty;
 var r3 = (t, e, c) => e in t ? d3(t, e, { enumerable: true, configurable: true, writable: true, value: c }) : t[e] = c;
 var $ = (t, e, c) => (r3(t, typeof e != "symbol" ? e + "" : e, c), c);

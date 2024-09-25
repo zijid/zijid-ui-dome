@@ -1,7 +1,7 @@
 <script setup>
 import { ref,reactive,computed,watch,watchEffect,onMounted,nextTick} from "vue";
-import { Message} from "zijid-ui/dev";
-
+// import { Message} from "zijid-ui";
+let Message={}
 const props=defineProps({
 })
 const emits=defineEmits([])

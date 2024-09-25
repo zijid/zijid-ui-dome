@@ -1,10 +1,16 @@
 import DefaultTheme from "vitepress/theme";
-import zijidUI from "zijid-ui";
 export default {
 	extends: DefaultTheme,
 	enhanceApp({ app }) {
-		console.log(`app:`, app);
-
-		app.use(zijidUI);
+		if (typeof window !== 'undefined') {
+			import('zijid-ui').then((module) => {
+			  // 使用模块
+			  console.log(`module:`,module)
+				app.use(module.default);
+			})
+			.catch((error) => {
+			  console.error(`Failed to load zijid-ui:`, error);
+			});
+		  }
 	},
 };

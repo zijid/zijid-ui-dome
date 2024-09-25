@@ -1,16 +1,8 @@
 <script setup>
 import {ref } from "vue"
-
+import { Message} from "zijid-ui";
 import icon from "./components/icon.vue"
 import DBTest from "./components/DBTest.vue"
-let Message={}
-if (typeof window !== 'undefined') {
-  import('zijid-ui').then((module) => {
-	console.log("1",module)
-	Message=module.Message
-    // 使用模块
-  });
-}
 const data=[
 	{
 		title:"组件",
@@ -194,23 +186,22 @@ const openDir=(e)=>{
 
 # zijid-ui
 
-这里展示了 zijid-ui 的组件和一些方法
+这里展示了zijid-ui的组件和一些方法
 ！！！贼垃圾的库 库和源文档应该更新过 对不上了 等以后想写再重写吧
-
 ## 开始使用
 
 ```cmd
 npm i zijid-ui
 ```
-
 ```js
-import z, { Message } from "zijid-ui";
+import z,{ Message} from "zijid-ui";
 import App from "./App.vue";
-const app = createApp(App);
-app.use(z);
+const app=createApp(App)
+app.use(z)
 ```
 
-## 仿 vscode 目录
+
+## 仿vscode目录
 
 ```vue
 <zi-dir @open="openDir" :data="dirData1"></zi-dir>
@@ -223,51 +214,53 @@ app.use(z);
 ## 菜单
 
 ```js
-const dirData1 = [
+
+const dirData1=[
 	{
-		title: "文件夹",
-		children: [
+		title:"文件夹",
+		children:[
 			{
-				isGroup: true,
-				title: "文件222",
-				data: "文件222",
-				handle: function (title, children) {
-					console.log("title:", title);
-				},
-			},
+				isGroup:true,
+				title:"文件222",
+				data:"文件222",
+				handle:function(title, children){
+					console.log("title:",title);
+				}
+			}
 		],
-		handle: function (title, children) {
-			console.log("title:", title);
-		},
+		handle:function(title, children){
+			console.log("title:",title);
+		}
 	},
 	{
-		title: "空文件夹",
-		children: [],
-		handle: function (title, children) {
-			console.log("title:", title);
-		},
+		title:"空文件夹",
+		children:[],
+		handle:function(title, children){
+			console.log("title:",title);
+		}
 	},
 	{
-		isGroup: true,
-		title: "文件1",
-		data: "文件1",
-		handle: function (title, children) {
-			console.log("title:", title);
-		},
+		isGroup:true,
+		title:"文件1",
+		data:"文件1",
+		handle:function(title, children){
+			console.log("title:",title);
+		}
 	},
 	{
-		isGroup: true,
-		title: "文件2",
-		data: "文件2",
-		handle: function (title, children) {
-			console.log("title:", title);
-		},
-	},
-];
-const openDir = (e) => {
-	Message?.succeed("打开了:" + e);
-};
+		isGroup:true,
+		title:"文件2",
+		data:"文件2",
+		handle:function(title, children){
+			console.log("title:",title);
+		}
+	}
+]
+const openDir=(e)=>{
+	Message.succeed("打开了:"+e)
+}
 ```
+
 
 ```vue
 <zi-dir @open="openDir" :data="dirData1"></zi-dir>
@@ -296,16 +289,10 @@ const openDir = (e) => {
 ```
 
 <icon></icon>
-
 ## 加载动画
 
 ```vue
-<zi-loading
-	fixed
-	:isLoading="true"
-	@click="Message.warn('1')"
-	:fixed="false"
-></zi-loading>
+<zi-loading fixed :isLoading="true" @click="Message.warn('1')" :fixed="false"></zi-loading>
 ```
 
 <h1 id="loading">加载动画</h1>
@@ -316,19 +303,19 @@ const openDir = (e) => {
 
 按钮类型 default|affirm|delete  
 按钮背景变淡 plain  
-圆角 round  
-变淡加圆角 round
+圆角round  
+变淡加圆角round  
 
 ```vue
 <zi-button type="delete" plain round>删除按钮</zi-button>
-```
 
+```
 ## 提示信息
 
 按钮类型 default|affirm|delete  
 按钮背景变淡 plain  
-圆角 round  
-变淡加圆角 round
+圆角round  
+变淡加圆角round  
 
 ```js
 import {Message} from "@/components/message/index.js"
@@ -351,6 +338,7 @@ Message({
 	time:4000//自动关闭时间
 });
 ```
+
 
 <h1 id="button">按钮</h1>
 <div>按钮类型 default|affirm|delete</div>
@@ -404,7 +392,7 @@ Message({
 	</template>
 </zi-header>
 ```
-```
+
 <div style="height: 100px;">
 <zi-header>
 <template #logo>
@@ -435,7 +423,7 @@ Message({
 </template>
 </zi-header>
 </div>
-```
+
 ## 缩放
 
 ```vue
@@ -459,96 +447,92 @@ Message({
 	</div>
 </zi-zoom>
 ```
-```
-<div style="height: 100px;" >
-	<zi-zoom v-slot="scope" offset="-16px">
-	<!-- noZoom="con" zoom="conNo" -->
-		<div :class="scope.class">
-			<div>
-			首页
-			</div>
-			<div>
-			我的
-			</div>
-			<div>
-			作品
-			</div>
-			<div>
-			资讯
-			</div>
-			<div>
-			关于本站
-			</div>
-		</div>
-	</zi-zoom>
+<div style="height: 100px;">
+<zi-zoom v-slot="scope" offset="-16px">
+<!-- noZoom="con" zoom="conNo" -->
+<div :class="scope.class">
+<div>
+首页
 </div>
-```
-## indexedDB 数据库
+<div>
+我的
+</div>
+<div>
+作品
+</div>
+<div>
+资讯
+</div>
+<div>
+关于本站
+</div>
+</div>
+</zi-zoom>
+</div>
+
+## indexedDB数据库
 
 操作数据库  
-new IndexedDB(表名)
-
+new IndexedDB(表名)  
 ```js
 function createDB(){
-	window?.aaa=db.value=new IndexedDB(dbName.value)
+	window.aaa=db.value=new IndexedDB(dbName.value)
 	console.log(`db.value:`,db.value);
 	Message(`数据库连接，数据库名称:${db.value.name}`)
 }
 ```
-
 db.createTable(表名,主键配置,索引配置数组)
 
 ```js
-async function createTableAndKey() {
-	const config = { ...dbConfig };
-	if (noKey.value) {
-		delete config.keyPath;
+async function createTableAndKey(){
+	const config={...dbConfig}
+	if(noKey.value){
+		delete config.keyPath
 	}
-	if ((await db.value.isCreate(tableName.value)) === false) {
-		await db.value.createTable(tableName.value, config, keyList);
-		Message(`创建表:undefined，配置:{"keyPath":"f","autoIncrement":false}`);
-	} else {
-		Message.error("表已存在");
+	if(await db.value.isCreate(tableName.value)===false){
+		await db.value.createTable(tableName.value,config,keyList)
+		Message(`创建表:undefined，配置:{"keyPath":"f","autoIncrement":false}`)
+	}else{
+		Message.error("表已存在")
 	}
 }
 ```
 
 ```js
-async function createKey() {
-	if (!db.value) {
-		Message.error("先连接数据库");
-		return;
+async function createKey(){
+	if(!db.value){
+		Message.error("先连接数据库")
+		return 
 	}
-	let createIndexState = await db.value.createIndex(tableName.value, keyList);
-	console.log(`createIndexState:`, createIndexState);
+	let createIndexState=await db.value.createIndex(tableName.value,keyList)
+	console.log(`createIndexState:`,createIndexState);
 }
 ```
 
 ```js
-async function createTable() {
-	const config = { ...dbConfig };
-	if (noKey.value) {
-		delete config.keyPath;
+async function createTable(){
+	const config={...dbConfig}
+	if(noKey.value){
+		delete config.keyPath
 	}
-	if ((await db.value.isCreate(tableName.value)) === false) {
-		await db.value.createTable(tableName.value, config);
-		Message(`创建表:${tableName.value}，配置:${JSON.stringify(dbConfig)}`);
-	} else {
-		Message.error("表已存在");
+	if(await db.value.isCreate(tableName.value)===false){
+		await db.value.createTable(tableName.value,config)
+		Message(`创建表:${tableName.value}，配置:${JSON.stringify(dbConfig)}`)
+	}else{
+		Message.error("表已存在")
 	}
 }
 ```
+db.add(表名,数据,主键(主键可以放这里也可以放数据的属性里),是否更新(默认false))
 
-db.add(表名,数据,主键(主键可以放这里也可以放数据的属性里),是否更新(默认 false))
-
-```js
-async function addData() {
-	let json;
-	try {
-		json = JSON.parse(data.value);
-	} catch (err) {
-		json = data.value;
+```js 
+async function addData(){
+	let json
+	try{
+		json=JSON.parse(data.value)
+	}catch(err){
+		json=data.value
 	}
-	await db.value.add(tableName.value, json, keyData.value);
+	await db.value.add(tableName.value,json,keyData.value)
 }
 ```
